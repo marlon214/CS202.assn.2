@@ -1,3 +1,10 @@
+/*
+Name: Marlon Alejandro, 5002573038, 1001, ASSIGNMENT_2
+Description: Defines constructors, functions, initialized varibles
+of our Animal cass and its derived classes and Cage classes
+Input: User inputed
+Output: Output to terminal
+*/
 #include <iostream>
 #include <string>
 #include "animal.h" //To include a local file, put the relative path in quotes
@@ -58,7 +65,7 @@ the classes that inherit from Animal. All your code should go below this line */
 
 /*
 */
-Gorilla::Gorilla(string gorilla_name) /*YOUR CODE HERE*/
+Gorilla::Gorilla(string gorilla_name) : Animal(gorilla_name, AnimalType::GORILLA) /*YOUR CODE HERE*/
 {
 	//Call the Animal class constructor to finish setting things. Use Giraffe's constructor as reference
 
@@ -71,17 +78,19 @@ void Gorilla::printGorilla()
 {
 	//The Gorilla prints nothing new, just call the Animal's print function similar to Giraffe's print
 	/*YOUR CODE HERE*/
+	Animal::printAnimalInfo();
 }
 
 //------------------ Zebra class function implementations ------------------
 
 /*
 */
-Zebra::Zebra(string zebra_name, int stripe_count) /*YOUR CODE HERE*/
+Zebra::Zebra(string zebra_name, int stripe_count): Animal(zebra_name, AnimalType::ZEBRA) /*YOUR CODE HERE*/
 {
 	//Similar to the other classes, call the base class Animal constructor
-
+\
 	//Then, set the new stripes member for this class
+	stripes = stripe_count;
 }
 
 /*
@@ -90,6 +99,8 @@ void Zebra::printZebra()
 {
 	//Again, similar to the other two classes, let's reuse the base Animal print function
 	/*YOUR CODE HERE*/
-	
+	Animal::printAnimalInfo();
+
 	//Then add onto it by printing the stripes
+	cout << "Stripes: " << stripes << endl; 
 }
